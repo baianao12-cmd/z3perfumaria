@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z3 Perfumaria | Luxury Fragrances</title>
+    <style>
+        :root {
+            --gold: #d4af37;
+            --dark: #0a0a0a;
+            --light: #ffffff;
+            --gray: #fcfcfc;
+        }
+
+        body { font-family: 'Playfair Display', serif; margin: 0; background-color: var(--light); color: var(--dark); overflow-x: hidden; }
+        
+        /* Cabeçalho de Luxo */
+        header { 
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://www.transparenttextures.com/patterns/dark-leather.png');
+            color: var(--light); text-align: center; padding: 60px 20px; border-bottom: 3px solid var(--gold);
+        }
+        .logo-img { 
+            width: 140px; border-radius: 50%; border: 3px solid var(--gold); 
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); margin-bottom: 20px;
+        }
+        header h1 { margin: 0; font-size: 3.5em; letter-spacing: 12px; font-weight: 300; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        header p { font-size: 10px; letter-spacing: 5px; color: var(--gold); text-transform: uppercase; margin-top: 10px; }
+
+        /* Menu Sofisticado */
+        nav { 
+            background: var(--dark); position: sticky; top: 0; z-index: 1000; 
+            display: flex; justify-content: center; border-bottom: 1px solid #222;
+        }
+        nav a { 
+            color: #888; text-decoration: none; padding: 18px 25px; font-size: 11px; 
+            text-transform: uppercase; letter-spacing: 2px; transition: 0.4s;
+        }
+        nav a:hover { color: var(--gold); }
+
+        /* Seções */
+        .section { display: none; padding: 60px 20px; max-width: 1200px; margin: auto; animation: fadeInUp 0.6s ease-out; }
+        .active { display: block; }
+
+        /* Catálogo Premium */
+        .cat-titulo { 
+            font-size: 1.8em; text-align: center; margin: 50px 0 30px; 
+            text-transform: uppercase; letter-spacing: 4px; position: relative;
+        }
+        .cat-titulo::after { content: ''; display: block; width: 50px; height: 2px; background: var(--gold); margin: 10px auto; }
+        
+        .sub-cat { text-align: center; color: var(--gold); font-style: italic; margin-bottom: 30px; letter-spacing: 1px; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 35px; padding: 0 10px; }
+        
+        .card { 
+            background: var(--light); border: 1px solid #eee; padding: 25px; text-align: center;
+            transition: all 0.4s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-color: var(--gold); }
+        
+        .card img { width: 100%; height: 240px; object-fit: contain; margin-bottom: 20px; transition: 0.4s; }
+        .card h3 { font-size: 14px; letter-spacing: 1px; margin: 15px 0; text-transform: uppercase; height: 35px; color: #222; }
+        .price { font-size: 1.3em; color: var(--dark); font-weight: bold; display: block; margin-bottom: 20px; }
+
+        /* Botões de Ação */
+        .btn { 
+            display: inline-block; padding: 12px 30px; text-decoration: none; font-weight: bold; 
+            font-size: 11px; letter-spacing: 2px; text-transform: uppercase; transition: 0.4s;
+        }
+        .btn-gold { background: var(--dark); color: var(--gold); border: 1px solid var(--gold); }
+        .btn-gold:hover { background: var(--gold); color: var(--dark); }
+
+        /* Quem Somos */
+        .sobre-box { text-align: center; line-height: 2; color: #555; max-width: 900px; margin: auto; }
+        .sobre-box strong { color: var(--dark); }
+
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <img src="https://i.postimg.cc/QMP6YWLS/Brown-And-Cream-Illustrative-Perfume-Logo.png" alt="Z3 Logo" class="logo-img">
+    <h1>Z3</h1>
+    <p>Onde a fragrância encontra a alma</p>
+</header>
+
+<nav id="navbar">
+    <a href="javascript:void(0)" onclick="showSection('inicio', this)">Início</a>
+    <a href="javascript:void(0)" onclick="showSection('catalogo', this)">Catálogo</a>
+    <a href="javascript:void(0)" onclick="showSection('quem-somos', this)">A Marca</a>
+    <a href="javascript:void(0)" onclick="showSection('contato', this)">Contato</a>
+</nav>
+
+<section id="inicio" class="section active" style="text-align:center;">
+    <h2 style="font-size: 2.5em; letter-spacing: 5px;">A ARTE DA PERFUMARIA</h2>
+    <p style="max-width: 600px; margin: 20px auto; color: #777;">Curadoria exclusiva de fragrâncias árabes e importadas. Localizados em Figueira, entregando sofisticação para todo o Brasil.</p>
+    <a href="javascript:void(0)" onclick="showSection('catalogo')" class="btn btn-gold" style="margin-top: 30px;">Explorar Coleção</a>
+</section>
+
+<section id="catalogo" class="section">
+    <h2 class="cat-titulo">Masculinos</h2>
+    <div class="sub-cat">Linhagem Árabe</div>
+    <div class="grid">
+        <div class="card"><img src="https://i.postimg.cc/x16pH46H/IMG-2633.webp"><h3>Asad (Lattafa)</h3><span class="price">R$ 250,00</span><a href="https://wa.me/5541997909869" class="btn btn-gold">Adquirir</a></div>
+        <div class="card"><img src="https://i.postimg.cc/6QTjhfP8/IMG-2634.webp"><h3>Zanzibar (Lattafa)</h3><span class="price">R$ 200,00</span><a href="https://wa.me/5541997909869" class="btn btn-gold">Adquirir</a></div>
+        <div class="card"><img src="https://i.postimg.cc/q7gbGxF3/IMG-2635.jpg"><h3>Fakhar Black (Lattafa)</h3><span class="price">R$ 210,00</span><a href="https://wa.me/5541997909869" class="btn btn-gold">Adquirir</a></div>
+    </div>
+
+    <div class="sub-cat" style="margin-top:50px;">Importados de Luxo</div>
+    <div class="grid">
+        <div class="card"><img src="https://i.postimg.cc/q7gbGxFh/IMG-2636.webp"><h3>Ultimate (Mercedes-Benz)</h3><span class="price">R$ 320,00</span><a href="https://wa.me/5541997909869" class="btn btn-gold">Adquirir</a></div>
+        <div class="card"><img src="https://i.postimg.cc/1z4CKrdg/IMG-2637.webp"><h3>Bad Boy Cobalt (CH)</h3><span class="price">R$ 450,00</span><a href="https://wa.me/5541997909869" class="btn btn-gold">Adquirir</a></div>
+        <div class="card"><img src="https://i.postimg.cc/QMV4qJz5/IMG-2638.webp"><h3>1 Million (Paco Rabanne)</h3><span class="price">R$ 440,00</span><a href="https://wa.me/5541997909869" class="btn btn-gold">Adquirir</a></div>
+        <div class="card"><img src="https://i.postimg.cc/3wWSZFqm/IMG-2640.webp"><h3>212 VIP Black (CH)</h3><span class="price">R$ 540,00</span><a href="https://wa.me/5541997909869" class="btn btn-gold">Adquirir</a></div>
+        <div class="card"><img src="https://i.postimg.cc/3wWSZFqg/IMG-2639.webp"><h3>Le Male Elixir (JPG)</h3><span class="price">R$ 770,00</span><a href="https://wa.me/5541997909869" class="btn btn-gold">Adquirir</a></div>
+    </div>
+
+    <h2 class="cat-titulo">Femininos</h2>
+    <div class="sub-cat">Essências Árabes</div>
+    <div class="grid">
+        <div class="card"><img src="https://i.postimg.cc/wB3fkQrQ/IMG-2641.webp"><h3>Fakhar Rose (Lattafa)</h3><span class="price">R$ 250,00</span><a href="https://wa.me/5541997909869" class="btn btn-gold">Adquirir</a></div>
+        <div class="card"><img src="https://i.postimg.cc/TPh7cJsQ/IMG-2419.webp"><h3>Sabah Al Ward</h3><span class="price">R$ 200,00</span><a href="https://wa.me/5541997909869" class="btn btn-gold">Adquirir</a></div>
+        <div class="card"><img src="https://i.postimg.cc/s216J4L9/IMG-2643.webp"><h3>Yara Elixir (Lattafa)</h3><span class="price">R$ 200,00</span><a href="https://wa.me/5541997909869" class="btn btn-gold">Adquirir</a></div>
+    </div>
+
+    <div class="sub-cat" style="margin-top:50px;">Grifes Internacionais</div>
+    <div class="grid">
+        <div class="card"><img src="https://i.postimg.cc/SKjTGfPG/IMG-2644.webp"><h3>Good Girl (CH)</h3><span class="price">R$ 640,00</span><a href="https://wa.me/5541997909869" class="btn btn-gold">Adquirir</a></div>
+        <div class="card"><img src="https://i.postimg.cc/pdyGBJSs/IMG-2645.jpg"><h3>Fantasy (Britney Spears)</h3><span class="price">R$ 180,00</span><a href="https://wa.me/5541997909869" class="btn btn-gold">Adquirir</a></div>
+        <div class="card"><img src="https://i.postimg.cc/TPh7cJs0/IMG-2646.jpg"><h3>Euphoria (Calvin Klein)</h3><span class="price">R$ 350,00</span><a href="https://wa.me/5541997909869" class="btn btn-gold">Adquirir</a></div>
+    </div>
+
+    <h2 class="cat-titulo">Body Splash</h2>
+    <div class="grid">
+        <div class="card"><img src="https://i.postimg.cc/43nL1Q0B/IMG-2647.webp"><h3>Bare Vanilla (VS)</h3><span class="price">R$ 120,00</span><a href="https://wa.me/5541997909869" class="btn btn-gold">Adquirir</a></div>
+        <div class="card"><img src="https://i.postimg.cc/jjCgh411/IMG-2648.jpg"><h3>Winter Candy Apple</h3><span class="price">R$ 150,00</span><a href="https://wa.me/5541997909869" class="btn btn-gold">Adquirir</a></div>
+    </div>
+</section>
+
+<section id="quem-somos" class="section">
+    <div class="sobre-box">
+        <h2 class="cat-titulo">Nossa Identidade</h2>
+        <p>A <strong>Z3 Perfumaria</strong> é o resultado da paixão por fragrâncias que definem personalidades. Nossa missão é entregar <strong>identidade, presença e sofisticação</strong> através de uma curadoria rigorosa de perfumes importados e árabes.</p>
+        
+        <p>Sediada em <strong>Figueira</strong>, a marca nasceu da união entre pai e filho, <strong>Carlos Eduardo (Baiano) e Leonardo Wanderley</strong>. Juntos, transformamos o amor pela perfumaria em um negócio focado em confiança e exclusividade, ajudando nossos clientes a encontrarem sua assinatura olfativa.</p>
+        
+        <p>Embora nossa base seja em Figueira, nossa presença é nacional. <strong>Enviamos para todo o Brasil</strong> com agilidade e segurança, garantindo que o luxo e a qualidade da Z3 cheguem a qualquer lugar. Trabalhamos com estoque à pronta entrega e encomendas personalizadas para garantir que você tenha sempre o melhor em mãos.</p>
+        
+        <div style="margin-top: 30px; padding: 20px; border: 1px solid var(--gold); display: inline-block;">
+            <span style="color: var(--gold); font-size: 11px; letter-spacing: 2px; text-transform: uppercase;">📍 Localizados em Figueira | 📦 Entregas para todo o Brasil</span>
+        </div>
+    </div>
+</section>
+
+<section id="contato" class="section" style="text-align:center;">
+    <h2 class="cat-titulo">Fale Conosco</h2>
+    <p>Atendimento especializado via WhatsApp.</p>
+    <br>
+    <a href="https://wa.me/5541997909869" class="btn btn-gold">WhatsApp: (41) 99790-9869</a>
+    <br><br>
+    <a href="https://instagram.com/z3perfumes_" class="btn btn-gold" style="background:transparent; border-color: #ddd; color: #555;">Instagram: @z3perfumes_</a>
+</section>
+
+<script>
+    function showSection(id, element) {
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+        
+        if(element) {
+            document.querySelectorAll('nav a').forEach(a => a.style.color = '#888');
+            element.style.color = '#d4af37';
+        }
+        window.scrollTo(0,0);
+    }
+</script>
+
+</body>
+</html>
